@@ -1,42 +1,23 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>samthrasher by samthrasher</title>
+---
+layout: default
+---
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>samthrasher</h1>
-        <p></p>
+<div class="home">
 
+  <h1 class="page-heading">Posts</h1>
 
-        <p class="view"><a href="https://github.com/samthrasher">View My GitHub Profile</a></p>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-      </header>
-      <section>
-        <h3>
-<a id="this-space-left-intentionally-blank" class="anchor" href="#this-space-left-intentionally-blank" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>This space left intentionally blank</h3>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-<p>Hi. This is a place where I'm going to put some things for you to look at. But I haven't got anything to put here just yet, so I'm putting this here instead. Don't worry, though, there will be some nice words here in due time. </p>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-<pre><code>Sometimes I write code. There will probably be some code on this site too. 
-It's going to look like this.
-</code></pre>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
-</html>
+</div>
